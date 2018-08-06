@@ -99,3 +99,32 @@ function multigreeting (name, languageCode){
 // with that birthdate was on that date. The dates should be JavaScript
 // Date objects.
 // If the birth date is after than the current date, return nothing.
+
+function howOld (birthDate, currentDate) {
+    birthDate = new Date(birthDate);
+
+    if (currentDate === undefined) {
+        currentDate = new Date.now();
+    } else {
+        currentDate = new Date(currentDate);
+    }
+
+    // var age = currentDate.getFullYear() - birthDate.getFullYear();
+    // var currentMonth = currentDate.getMonth();
+    // var birthMonth = birthDate.getMonth();
+    
+    // if (currentMonth < birthMonth) {
+    //     return age - 1;
+    // } else if (currentMonth > birthMonth) {
+    //     return age;
+    // } else if (currentDate.getDate() < birthDate.getDate()) {
+    //     return age - 1;
+    // } else {
+    //     return age
+    // }  
+
+    var age = currentDate.getTime()  - birthDate.getTime() ; // Age in milliseconds
+    age /= 1000 * 3600 * 24 * 365.25; // converts to years
+    return Math.floor(age);
+
+}
