@@ -102,14 +102,9 @@ function multigreeting(name, languageCode) {
 // If the birth date is after than the current date, return nothing.
 
 function howOld(birthDate, currentDate) {
-    birthDate = new Date(birthDate);
-
     if (currentDate === undefined) {
         currentDate = new Date();
-    } else {
-        currentDate = new Date(currentDate);
     }
-
     if (birthDate > currentDate) {
         return;
     }

@@ -151,8 +151,4 @@ describe('howOld', function () {
     assert.equal(41, howOld(new Date(1976, 9, 4)));
     assert.equal(41, howOld(new Date(1976, 9, 4)));
   })
-  it('should calculate the age correctly using strings', function () {
-    assert.equal(40, howOld("09/04/1976", "08/01/2017"));
-    assert.equal(40, howOld("09/04/1976", "09/01/2017"));
-  })
 })
