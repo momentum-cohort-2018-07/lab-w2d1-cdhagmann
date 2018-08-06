@@ -12,21 +12,21 @@ var leftover = candies % people;
 // 3. Create a function called greeting that returns "Hello, <name>!",
 // where <name> is the name given as an argument to the function.
 
-function greeting (name) {
+function greeting(name) {
     return "Hello, " + name + "!";
 }
 
 // 4. Create a function called isOdd that, given a number, will
 // return true if it is odd and false if it is not.
 
-function isOdd (number) {
+function isOdd(number) {
     return Math.abs(number) % 2 === 1;
 }
 
 // 5. Create a function called isEven that, given a number, will
 // return true if it is even and false if it is not.
 
-function isEven (number) {
+function isEven(number) {
     return Math.abs(number) % 2 === 0;
 }
 
@@ -34,7 +34,7 @@ function isEven (number) {
 // Fahrenheit temperature as an argument and returns the
 // temperature in Celsius.
 
-function fahrenheitToCelsius (temp) {
+function fahrenheitToCelsius(temp) {
     return 5 * (temp - 32) / 9.0;
 }
 
@@ -43,7 +43,7 @@ function fahrenheitToCelsius (temp) {
 // temperature in Fahrenheit.
 
 function celsiusToFahrenheit(temp) {
-    return 9/5.0 * temp + 32;
+    return 9 / 5.0 * temp + 32;
 }
 
 // 7. Create a function called fahrenheitToKelvin that takes a
@@ -61,7 +61,7 @@ function fahrenheitToKelvin(temp) {
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
 
-function lesser (a, b) {
+function lesser(a, b) {
     if (a <= b) {
         return a;
     } else {
@@ -81,7 +81,7 @@ function lesser (a, b) {
 //
 // If any other language code is used, return nothing.
 
-function multigreeting (name, languageCode){
+function multigreeting(name, languageCode) {
     if (languageCode.toLowerCase() === "en") {
         return "Hello, " + name + "!";
     } else if (languageCode.toLowerCase() === "es") {
@@ -91,7 +91,7 @@ function multigreeting (name, languageCode){
     } else if (languageCode.toLowerCase() === "eo") {
         return "Saluton, " + name + "!";
     } else {
-        return ;
+        return;
     }
 }
 
@@ -101,31 +101,35 @@ function multigreeting (name, languageCode){
 // Date objects.
 // If the birth date is after than the current date, return nothing.
 
-function howOld (birthDate, currentDate) {
+function howOld(birthDate, currentDate) {
     birthDate = new Date(birthDate);
 
     if (currentDate === undefined) {
-        currentDate = new Date.now();
+        currentDate = new Date();
     } else {
         currentDate = new Date(currentDate);
     }
 
-    // var age = currentDate.getFullYear() - birthDate.getFullYear();
-    // var currentMonth = currentDate.getMonth();
-    // var birthMonth = birthDate.getMonth();
-    
-    // if (currentMonth < birthMonth) {
-    //     return age - 1;
-    // } else if (currentMonth > birthMonth) {
-    //     return age;
-    // } else if (currentDate.getDate() < birthDate.getDate()) {
-    //     return age - 1;
-    // } else {
-    //     return age
-    // }  
+    if (birthDate > currentDate) {
+        return;
+    }
 
-    var age = currentDate.getTime()  - birthDate.getTime() ; // Age in milliseconds
-    age /= 1000 * 3600 * 24 * 365.25; // converts to years
-    return Math.floor(age);
+    var age = currentDate.getFullYear() - birthDate.getFullYear();
+    var currentMonth = currentDate.getMonth();
+    var birthMonth = birthDate.getMonth();
+
+    if (currentMonth < birthMonth) {
+        return age - 1;
+    } else if (currentMonth > birthMonth) {
+        return age;
+    } else if (currentDate.getDate() < birthDate.getDate()) {
+        return age - 1;
+    } else {
+        return age;
+    }
+
+    // var age = currentDate.getTime()  - birthDate.getTime() ; // Age in milliseconds
+    // age /= 1000 * 3600 * 24 * 365.25; // converts to years
+    // return Math.floor(age);
 
 }
