@@ -54,7 +54,7 @@ function celsiusToFahrenheit(temp) {
 // 1 degree Kelvin equals 1 degree Celsius.
 
 function fahrenheitToKelvin(temp) {
-    return 5 * (temp - 32) / 9.0 + 273.15;
+    return fahrenheitToCelsius(temp) + 273.15;
 }
 
 // 8. Create a function called lesser that takes two numbers as
@@ -94,6 +94,7 @@ function multigreeting (name, languageCode){
         return ;
     }
 }
+
 // 10. Create a function, howOld, that takes a birthdate and a another
 // date (the "current date") and returns how many years old the person
 // with that birthdate was on that date. The dates should be JavaScript
