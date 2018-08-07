@@ -90,8 +90,6 @@ function multigreeting(name, languageCode) {
         return "Bonjour, " + name + "!";
     } else if (languageCode.toLowerCase() === "eo") {
         return "Saluton, " + name + "!";
-    } else {
-        return;
     }
 }
 
@@ -105,9 +103,12 @@ function howOld(birthDate, currentDate) {
     if (currentDate === undefined) {
         currentDate = new Date();
     }
+
     if (birthDate > currentDate) {
         return;
     }
+
+    // Option 1
 
     var age = currentDate.getFullYear() - birthDate.getFullYear();
     var currentMonth = currentDate.getMonth();
@@ -122,6 +123,8 @@ function howOld(birthDate, currentDate) {
     } else {
         return age;
     }
+
+    // Option 2
 
     // var age = currentDate.getTime()  - birthDate.getTime() ; // Age in milliseconds
     // age /= 1000 * 3600 * 24 * 365.25; // converts to years
